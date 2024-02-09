@@ -20,6 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ToDoList.BLL\ToDoList.BLL.csproj" />
       <ProjectReference Include="..\ToDoList.DAL\ToDoList.DAL.csproj" />
     </ItemGroup>
 

@@ -19,6 +19,11 @@ public class RepositoryBase<T> : IRepositoryBase<T>
         return await _dbContext.Set<T>().ToListAsync();
     }
 
+    public async Task<T?> FindById(int id)
+    {
+        return await _dbContext.Set<T>().FindAsync(id);
+    }
+
     public void Create(T entity)
     {
         _dbContext.Set<T>().Add(entity);

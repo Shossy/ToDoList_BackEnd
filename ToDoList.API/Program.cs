@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using ToDoList.BLL.AutoMapper;
+using ToDoList.BLL.Services.Interfaces;
+using ToDoList.BLL.Services.Realizations;
 using ToDoList.DAL.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ToDoListDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
-
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
+builder.Services.AddScoped<IServiceManager, ServiceManager>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

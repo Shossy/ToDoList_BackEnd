@@ -9,7 +9,7 @@ public class RepositoryWrapper : IRepositoryWrapper
 {
     private readonly ToDoListDbContext _toDoListDbContext;
 
-    private IToDoTaskRepository _toDoTaskRepository;
+    private IToDoTaskRepository? _toDoTaskRepository;
 
     public RepositoryWrapper(ToDoListDbContext toDoListDbContext)
     {

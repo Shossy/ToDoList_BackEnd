@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ToDoList.Controllers;
 
 [ApiController]
-[Route("server/[controller]")]
+[Route("server/[controller]/[action]")]
 public class BaseApiController : ControllerBase
 {
     private IMediator? _mediator;
